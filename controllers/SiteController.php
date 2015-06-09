@@ -47,7 +47,7 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex($message = "Hello world")
     {
         return $this->render('index');
     }
