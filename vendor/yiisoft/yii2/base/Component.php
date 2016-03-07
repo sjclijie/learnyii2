@@ -485,6 +485,23 @@ class Component extends Object
     }
 
     /**
+     * 绑定事件的形式
+     *
+     * $person = new Person();
+     *
+     * $person->on( Person::EVENT_GREET, 'person_say_hello' );
+     *
+     * $person->on( Person::EVENT_GREET, [$obj, 'say_hello'] );
+     *
+     * $person->on( Person::EVENT_GREET, ['app\helper\Greet', 'say_hello'] );
+     *
+     * $person->on( Person::EVENT_GREET, function( event ){
+            echo "Hello world";
+     * } );
+     *
+     */
+
+    /**
      * Detaches an existing event handler from this component.
      * This method is the opposite of [[on()]].
      * @param string $name event name
@@ -546,6 +563,7 @@ class Component extends Object
             }
         }
         // invoke class-level attached handlers
+        //触发类级别的事件
         Event::trigger($this, $name, $event);
     }
 

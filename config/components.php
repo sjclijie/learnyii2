@@ -38,4 +38,29 @@ return [
         ],
     ],
     'db' => require(__DIR__ . '/db.php'),
+    'urlManager' => [
+        'enablePrettyUrl' => true,
+        'showScriptName' => false,
+        //'suffix' => '',
+        'rules' => [
+            'index' =>  'site/index',
+            'about' =>  'site/about',
+            [
+                'pattern'   =>  'views/<page:\d+>/<tag>',
+                'route'     =>  'site/view',
+                'defaults'  =>  [
+                    'page'  => 1,
+                    'tag'   => 'hello'
+                ]
+            ],
+            [
+                'pattern'   => 'http://<site:\w+>.yii.com:8080/jaylee/<id:\w+>',
+                'route'     => 'site/jaylee',
+                'defaults'   =>  [
+                    'site'  => 'www',
+                    'id'    => 0
+                ]
+            ]
+        ]
+    ]
 ];

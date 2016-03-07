@@ -33,7 +33,7 @@ class Application extends \yii\base\Application
      * The configuration is an array whose first element specifies the route of the action.
      * The rest of the array elements (key-value pairs) specify the parameters to be bound
      * to the action. For example,
-     *
+     *ff
      * ~~~
      * [
      *     'offline/notice',

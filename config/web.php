@@ -8,6 +8,8 @@ $config = [
     'bootstrap' => ['log'],
     'components' => require(__DIR__."/components.php"),
     'params' => $params,
+    'defaultRoute' => 'site/index',   //配置默认路由
+    //'catchAll'  =>  ['site/login'],
 ];
 
 if (YII_ENV_DEV) {
